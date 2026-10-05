@@ -1,0 +1,7 @@
+missingness_max: 0.05
+sample_missingness_max: 0.10
+minor_allele_frequency_min: 0.01
+hwe_p_min: 0.000001
+storage_limit_gb: 6
+delete_raw_after_extract: false
+

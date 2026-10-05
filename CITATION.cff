@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "DeepG2P-Celiac: multi-source evidence synthesis for ranking celiac disease risk genes"
+version: 0.1.0
+date-released: 2026-10-06
+license: MIT
+repository-code: "https://github.com/Babajan-B/DeepG2P"
+keywords:
+  - celiac disease
+  - GWAS Catalog
+  - gene prioritization
+  - FinnGen
+  - replication
+authors:
+  - family-names: Shaik
+    given-names: Noor Ahmad
+    affiliation: "Department of Genetic Medicine, Faculty of Medicine, King Abdulaziz University, Jeddah, Saudi Arabia"
+    orcid: "https://orcid.org/0000-0001-6674-5409"
+  - family-names: Elango
+    given-names: Ramu
+    affiliation: "Department of Genetic Medicine, Faculty of Medicine, King Abdulaziz University, Jeddah, Saudi Arabia"
+    orcid: "https://orcid.org/0000-0003-4264-2135"
+  - family-names: Awan
+    given-names: Zuhier
+    affiliation: "Department of Clinical Biochemistry, Faculty of Medicine, King Abdulaziz University, Jeddah, Saudi Arabia"
+    orcid: "https://orcid.org/0000-0003-2850-9047"
+  - family-names: Banaganapalli
+    given-names: Babajan
+    affiliation: "Department of Genetic Medicine, Faculty of Medicine, King Abdulaziz University, Jeddah, Saudi Arabia"
+    email: bbabajan@kau.edu.sa
+    orcid: "https://orcid.org/0000-0001-8268-3412"

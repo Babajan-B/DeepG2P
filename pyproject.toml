@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deepg2p-celiac"
+version = "0.1.0"
+description = "Ranking celiac disease candidate genes from public GWAS Catalog records, with replication in IEU OpenGWAS and FinnGen."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Noor Ahmad Shaik" },
+  { name = "Ramu Elango" },
+  { name = "Zuhier Awan" },
+  { name = "Babajan Banaganapalli", email = "bbabajan@kau.edu.sa" },
+]
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.110",
+  "joblib>=1.3",
+  "networkx>=3.2",
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "pydantic>=2.6",
+  "pyyaml>=6.0",
+  "scikit-learn>=1.3",
+  "uvicorn>=0.27",
+]
+
+[project.optional-dependencies]
+analysis = [
+  "matplotlib>=3.8",
+  "scipy>=1.11",
+]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.4",
+]
+
+[project.urls]
+Repository = "https://github.com/Babajan-B/DeepG2P"
+
+[project.scripts]
+deepg2p-extract = "deepg2p_celiac.ingestion.extract_panel:main"
+deepg2p-clean-phenotypes = "deepg2p_celiac.ingestion.clean_phenotypes:main"
+deepg2p-train-baseline = "deepg2p_celiac.training.train_baseline:main"
+deepg2p-train-graph-model = "deepg2p_celiac.training.train_graph_model:main"
+deepg2p-build-graph = "deepg2p_celiac.graph.build_graph:main"
+deepg2p-export-graph-dataset = "deepg2p_celiac.graph.export_graph_dataset:main"
+deepg2p-plink-qc = "deepg2p_celiac.qc.plink_runner:main"
+deepg2p-validate-data = "deepg2p_celiac.ingestion.validate_data:main"
+deepg2p-run-pipeline = "deepg2p_celiac.pipeline.run_pipeline:main"
+deepg2p-render-report = "deepg2p_celiac.interpretation.report:main"
+deepg2p-top-features = "deepg2p_celiac.interpretation.write_top_features:main"
+deepg2p-validate-science = "deepg2p_celiac.analysis.validation:main"
+deepg2p-open-evidence = "deepg2p_celiac.analysis.evidence:main"
+deepg2p-update-panel = "deepg2p_celiac.analysis.update_panel:main"
+deepg2p-final-report = "deepg2p_celiac.analysis.final_report:main"
+deepg2p-doctor = "deepg2p_celiac.project.doctor:main"
+deepg2p-ieu-vcf = "deepg2p_celiac.analysis.ieu_vcf:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

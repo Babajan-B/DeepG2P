@@ -1,0 +1,12 @@
+rsid,gene,chromosome,position_hg19,category,notes
+rs2187668,HLA-DQA1,6,32605884,HLA_tag,Tag SNP associated with DQ2.5 risk haplotype
+rs7454108,HLA-DQB1,6,32632665,HLA_tag,HLA-DQ region marker
+rs2395182,HLA-DRB1,6,32578734,HLA_tag,HLA-DR region marker
+rs7775228,HLA-DQB1,6,32628005,HLA_tag,HLA-DQ region marker
+rs4639334,HLA-DQA1,6,32607609,HLA_tag,HLA-DQ region marker
+rs13119723,IL2,4,123377086,immune_locus,Reported immune-associated locus
+rs917997,IL18RAP,2,102425536,immune_locus,Reported immune-associated locus
+rs6441961,CCR3,3,46373443,immune_locus,Reported immune-associated locus
+rs653178,ATXN2,12,111884608,immune_locus,Reported immune-associated locus
+rs3184504,SH2B3,12,111884608,immune_locus,Immune pleiotropy marker
+

@@ -1,0 +1,27 @@
+project: DeepG2P-Celiac
+data_policy:
+  synthetic_data_allowed: false
+  clinical_use_allowed: false
+  max_storage_gb: 6
+required_inputs:
+  genotype_files:
+    path: data/raw/genotypes
+    accepted_formats:
+      - 23andMe-like raw text
+      - AncestryDNA-like raw text
+      - tab-separated rsid/chromosome/position/genotype
+    notes: Real public or user-provided genotype files only.
+  phenotype_file:
+    path: data/raw/phenotypes.csv
+    required_columns:
+      - sample_id
+      - celiac_status
+    accepted_labels:
+      - case
+      - control
+excluded_inputs:
+  - synthetic genotype matrices
+  - randomly generated phenotypes
+  - simulated case/control labels
+  - medical diagnosis claims
+

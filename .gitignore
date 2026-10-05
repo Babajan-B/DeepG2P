@@ -1,0 +1,28 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Data and outputs (public data are downloaded locally, never committed)
+data/raw/*
+data/interim/*
+data/processed/*
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+results/*
+!results/.gitkeep
+*.tbi
+*.vcf.gz
+*.zip
+*.joblib
+*.log
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/
+.qodo/
