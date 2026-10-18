@@ -4,7 +4,7 @@ Source code of the `deepg2p_celiac` Python package, which ranks celiac disease c
 GWAS association records.
 
 This repository accompanies the manuscript *"DeepG2P-Celiac: multi-source evidence synthesis for ranking
-celiac disease risk genes"* (Shaik NA, Elango R, Awan Z, Banaganapalli B; submitted).
+celiac disease risk genes"* 
 
 No data are stored in this repository. All inputs are public summary-level data that you download yourself
 (see below).
