@@ -1,27 +1,22 @@
 # DeepG2P-Celiac
 
-Code for ranking celiac disease candidate genes from public GWAS Catalog records and testing the ranking
-in independent summary statistics (IEU OpenGWAS ieu-a-276 and FinnGen release 12).
+Source code of the `deepg2p_celiac` Python package, which ranks celiac disease candidate genes from public
+GWAS association records.
 
 This repository accompanies the manuscript *"DeepG2P-Celiac: multi-source evidence synthesis for ranking
-celiac disease risk genes"* (Shaik NA, Elango R, Awan Z, Banaganapalli B; submitted). It contains the
-source code of the `deepg2p_celiac` Python package only.
+celiac disease risk genes"* (Shaik NA, Elango R, Awan Z, Banaganapalli B; submitted).
 
 No data are stored in this repository. All inputs are public summary-level data that you download yourself
-(see below), and no individual-level genotype data were used for the manuscript.
+(see below).
 
-## What the analysis does
+## What the package does
 
-1. Extracts celiac disease associations from the NHGRI-EBI GWAS Catalog (259 associations, 16 studies,
-   release indexed 18 May 2026).
-2. Splits each association into one record per catalog-mapped gene and scores each gene as
-   `ES = min(-log10 p_best, 300) + n_records`. The extended MHC (chr6:25–34 Mb, GRCh38) is reported
-   separately.
-3. Compares the score with ranking by p value alone, and runs a sensitivity analysis with a seven-edge
-   curated gene graph.
-4. Looks up a 10-SNP candidate panel (`configs/celiac_snp_panel.csv`) in ieu-a-276 and FinnGen R12.
-5. Tests whether the score predicts gene-level replication in FinnGen (AUC, Spearman correlation,
-   cluster bootstrap) and checks risk-allele direction.
+1. Reads GWAS Catalog-style association tables and keeps the celiac disease records.
+2. Splits each association into one record per mapped gene and scores each gene as
+   `ES = min(-log10 p_best, 300) + n_records`.
+3. Adds graph context to the gene ranking from a small curated gene graph.
+4. Proposes candidate updates to the SNP panel (`configs/celiac_snp_panel.csv`) from the gene scores.
+5. Extracts top variants from IEU OpenGWAS GWAS-VCF summary statistics and looks up the panel SNPs in them.
 
 ## Installation
 
@@ -80,9 +75,8 @@ data/       empty placeholders; downloaded data go here and are ignored by git
 The `deepg2p_celiac` package also contains modules for individual-level data: SNP-panel extraction from
 consumer genotype files, phenotype cleaning, PLINK QC command building, a baseline classifier, a
 graph-smoothed gene model and a small FastAPI service. These modules need real, consented genotype and
-phenotype files (see [docs/data_policy.md](docs/data_policy.md)). **They were not used in the manuscript,**
-and no trained model contributed to its results. Their command-line entry points are listed in
-`pyproject.toml`, and [docs/final_workflow.md](docs/final_workflow.md) describes their use.
+phenotype files (see [docs/data_policy.md](docs/data_policy.md)). **They were not used in the manuscript.**
+Their command-line entry points are listed in `pyproject.toml`, and [docs/final_workflow.md](docs/final_workflow.md) describes their use.
 
 ## Limitations
 
