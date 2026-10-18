@@ -4,8 +4,8 @@ Code for ranking celiac disease candidate genes from public GWAS Catalog records
 in independent summary statistics (IEU OpenGWAS ieu-a-276 and FinnGen release 12).
 
 This repository accompanies the manuscript *"DeepG2P-Celiac: multi-source evidence synthesis for ranking
-celiac disease risk genes"* (Shaik NA, Elango R, Awan Z, Banaganapalli B; submitted). The scripts in
-`scripts/` regenerate every number, table and figure in that manuscript from the downloaded public files.
+celiac disease risk genes"* (Shaik NA, Elango R, Awan Z, Banaganapalli B; submitted). It contains the
+source code of the `deepg2p_celiac` Python package only.
 
 No data are stored in this repository. All inputs are public summary-level data that you download yourself
 (see below), and no individual-level genotype data were used for the manuscript.
@@ -25,33 +25,24 @@ No data are stored in this repository. All inputs are public summary-level data 
 
 ## Installation
 
-Requires Python 3.10 or later. The FinnGen step also needs `tabix` from
-[HTSlib](https://www.htslib.org/) built with network (libcurl) support.
+Requires Python 3.10 or later.
 
 ```bash
 git clone https://github.com/Babajan-B/DeepG2P.git
 cd DeepG2P
 python -m venv .venv
 source .venv/bin/activate
-pip install -e ".[analysis,dev]"
+pip install -e ".[dev]"
 pytest
 ```
 
-## Reproducing the manuscript
+## Usage
 
 Run every command from the repository root.
 
-**1. Download the GWAS Catalog association file** (about 60 MB):
-
-```bash
-mkdir -p data/raw/open_source
-curl -L -o data/raw/open_source/gwas-catalog-associations-full.zip \
-  https://ftp.ebi.ac.uk/pub/databases/gwas/releases/latest/gwas-catalog-associations-full.zip
-python scripts/extract_gwas_catalog.py
-```
-
-The catalog is updated continuously, so a later release may return more than the 259 associations used
-in the manuscript.
+**1. Download the GWAS Catalog association file** (about 60 MB) from
+<https://ftp.ebi.ac.uk/pub/databases/gwas/releases/latest/gwas-catalog-associations-full.zip> and keep the
+celiac disease rows (`DISEASE/TRAIT` matching "celiac", "coeliac" or "gluten").
 
 **2. Download IEU OpenGWAS dataset ieu-a-276** (Dubois et al. 2010; GWAS-VCF, GRCh37) from
 <https://gwas.mrcieu.ac.uk/datasets/ieu-a-276/> (a free OpenGWAS account is required) and save it as
@@ -63,38 +54,25 @@ deepg2p-ieu-vcf \
   --output data/processed/open_source_evidence/ieu-a-276/ieu_a_276_top1000_summary_stats.csv
 ```
 
-**3. Gene ranking, panel look-up, figures 1–4 and supplementary tables:**
+**3. Score genes from the association table:**
 
 ```bash
-python scripts/make_figures.py
+deepg2p-open-evidence \
+  --associations path/to/celiac_associations.csv \
+  --output-dir data/processed/open_source_evidence \
+  --trait-filter celiac
 ```
 
-**4. FinnGen R12 replication and figure 5.** FinnGen summary statistics for `K11_COELIAC` are queried
-remotely with tabix from the public FinnGen bucket, so nothing large is downloaded. Panel SNP positions on
-GRCh38 are fetched from the Ensembl REST API.
-
-```bash
-python scripts/replicate_finngen.py
-```
-
-Outputs are written to `results/`:
-
-| Folder | Contents |
-|---|---|
-| `results/figures/` | Figures 1–5 (PNG and TIFF) |
-| `results/supplementary/` | Gene scores (non-MHC and MHC), top ieu-a-276 variants, supplementary figure |
-| `results/audit/` | Derived numbers, panel look-ups, FinnGen replication tables and direction check |
+See [docs/final_workflow.md](docs/final_workflow.md) for the remaining commands.
 
 ## Repository layout
 
 ```
 configs/    candidate SNP panel and pipeline settings
 docs/       data policy and workflow notes
-scripts/    manuscript analysis scripts (extraction, scoring, figures, FinnGen replication)
 src/        the deepg2p_celiac Python package
 tests/      unit tests (pytest)
 data/       empty placeholders; downloaded data go here and are ignored by git
-results/    empty placeholder; outputs go here and are ignored by git
 ```
 
 ## Other modules
