@@ -4,7 +4,7 @@ Source code of the `deepg2p_celiac` Python package, which ranks celiac disease c
 GWAS association records.
 
 This repository accompanies the manuscript *"DeepG2P-Celiac: multi-source evidence synthesis for ranking
-celiac disease risk genes"* (Shaik NA, Elango R, Awan Z, Banaganapalli B; submitted).
+celiac disease risk genes"* (submitted).
 
 No data are stored in this repository. All inputs are public summary-level data that you download yourself
 (see below).
@@ -88,7 +88,7 @@ Their command-line entry points are listed in `pyproject.toml`, and [docs/final_
 
 This software is for research only and is not intended for clinical diagnosis.
 
-## Data sources and acknowledgements
+## Data sources
 
 - NHGRI-EBI GWAS Catalog: Sollis E et al. (2023) *Nucleic Acids Res* 51:D977–D985.
 - IEU OpenGWAS: Elsworth B et al. (2020) *bioRxiv*. Dataset ieu-a-276: Dubois PCA et al. (2010)
@@ -96,20 +96,6 @@ This software is for research only and is not intended for clinical diagnosis.
 - FinnGen: Kurki MI et al. (2023) *Nature* 613:508–518.
 
 Each data source has its own terms of use, and they apply when you download the data.
-
-This work was funded by the Deanship of Scientific Research (DSR) at King Abdulaziz University, Jeddah,
-Saudi Arabia, under grant No. (G: 444-140-1442).
-
-## Authors
-
-- Noor Ahmad Shaik, Department of Genetic Medicine, King Abdulaziz University
-  ([ORCID 0000-0001-6674-5409](https://orcid.org/0000-0001-6674-5409))
-- Ramu Elango, Department of Genetic Medicine, King Abdulaziz University
-  ([ORCID 0000-0003-4264-2135](https://orcid.org/0000-0003-4264-2135))
-- Zuhier Awan, Department of Clinical Biochemistry, King Abdulaziz University
-  ([ORCID 0000-0003-2850-9047](https://orcid.org/0000-0003-2850-9047))
-- Babajan Banaganapalli (corresponding author, bbabajan@kau.edu.sa), Department of Genetic Medicine,
-  King Abdulaziz University ([ORCID 0000-0001-8268-3412](https://orcid.org/0000-0001-8268-3412))
 
 ## Citation
 
