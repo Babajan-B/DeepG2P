@@ -97,19 +97,6 @@ This software is for research only and is not intended for clinical diagnosis.
 
 Each data source has its own terms of use, and they apply when you download the data.
 
-This work was funded by the Deanship of Scientific Research (DSR) at King Abdulaziz University, Jeddah,
-Saudi Arabia, under grant No. (G: 444-140-1442).
-
-## Authors
-
-- Noor Ahmad Shaik, Department of Genetic Medicine, King Abdulaziz University
-  ([ORCID 0000-0001-6674-5409](https://orcid.org/0000-0001-6674-5409))
-- Ramu Elango, Department of Genetic Medicine, King Abdulaziz University
-  ([ORCID 0000-0003-4264-2135](https://orcid.org/0000-0003-4264-2135))
-- Zuhier Awan, Department of Clinical Biochemistry, King Abdulaziz University
-  ([ORCID 0000-0003-2850-9047](https://orcid.org/0000-0003-2850-9047))
-- Babajan Banaganapalli (corresponding author, bbabajan@kau.edu.sa), Department of Genetic Medicine,
-  King Abdulaziz University ([ORCID 0000-0001-8268-3412](https://orcid.org/0000-0001-8268-3412))
 
 ## Citation
 
