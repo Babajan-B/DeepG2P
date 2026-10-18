@@ -13,8 +13,6 @@ data/processed/*
 !data/raw/.gitkeep
 !data/interim/.gitkeep
 !data/processed/.gitkeep
-results/*
-!results/.gitkeep
 *.tbi
 *.vcf.gz
 *.zip
